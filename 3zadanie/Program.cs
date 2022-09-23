@@ -33,6 +33,7 @@ else if (day == "7")
 {
     Console.WriteLine("Sunday");
 }
-else {
+else
+{
     Console.Write("Theres no such day");
 }
