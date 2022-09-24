@@ -6,7 +6,7 @@
 // 918 -> 8
 
 Console.Clear();
-Console.WriteLine("Type the number from 100 to 999: ");
+Console.Write("Type the number from 100 to 999: ");
 int number = Convert.ToInt32(Console.ReadLine());
 if (number < 1000 && number > 99)
 {
