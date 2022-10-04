@@ -1,26 +1,28 @@
-﻿
-Console.Write("Введите пятизначное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine();
-int Module(int num)
+﻿// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
+// 14212 -> нет
+
+// 12821 -> да
+
+// 23432 -> да
+
+Console.Clear();
+Console.Write("Type five-digit number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+int num2;
+int num3;
+if (num > 9999 && num <= 99999)
 {
-    if (num < 0)
+    if (num%10 == num/10000)
     {
-        return -num;
-    }
-    else return num;
-}
-int result = Module(number);
-void Reverse(int num1)
-{
-    if (num1 / 10000 == num1 % 10 && num1 % 100 / 10 == num1 % 10000 / 1000)
+    num2= num/1000;
+    num3= num%100;
+    if (num2%10 == num3/10)
     {
-        Console.WriteLine($"Палиндром");
+    Console.WriteLine($"{num} is palindrome!");
     }
-    else Console.WriteLine($"НЕ палиндром");
+    else Console.WriteLine("The number is not palindrome!");
+    }
+    else Console.WriteLine("The number is not palindrome!");
 }
-if (result > 9999 & result <= 99999)
-{
-    Reverse(result);
-}
-else Console.WriteLine($"Введено некорректное число");
+else Console.WriteLine("Five-digit number you dumbass");
