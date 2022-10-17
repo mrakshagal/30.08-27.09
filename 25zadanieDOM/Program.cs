@@ -1,26 +1,26 @@
-﻿Console.Clear();
-Console.WriteLine("Возведение в степень числа");
-Console.Write("Введите число, которое необходимо возвести в степень: ");
-double numA = Convert.ToDouble(Console.ReadLine());
-Console.Write("Введите натуральную степень, в которую необходимо возвести число: ");
-int numB = Convert.ToInt32(Console.ReadLine());
-int count = 1;
-double numC = 1;
-double Exponentiation(double num1, int num2, int i, double num3)
+﻿// Принимает на вход два числа и возводит первое число в натуральную степень второго числа
+
+Console.Clear();
+Console.Write("Type the number which is gonna be raised to a power: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.Write("Type the integer number which is gonna be the power:");
+int b = Convert.ToInt32(Console.ReadLine());
+if (b<=0)
 {
-    i = 1;
-    num3 = 1;
-    while (i <= num2)
+    Console.Write("B must be integer number!!!");
+}
+else
+{
+    int Pow(int a1, int b1)
     {
-        num3 = num3 * num1;
-        i++;
+        int i;
+        int power = a1;
+        for (i=2; i<= b1; i++)
+        {
+            power= power*a1;
+        }
+        return power;
     }
-    return Math.Round(num3, 2);
+   int p= Pow (a,b);
+Console.WriteLine($"{p}");
 }
-if (numB < 0)
-{
-    Console.WriteLine($"Вы ввели отрицательное число, данный алгоритм предназначен для нахождения только натуральной степени, возможно, Вы имели ввиду {-numB}");
-    numB = -numB;
-}
-double result = Exponentiation(numA, numB, count, numC);
-Console.WriteLine($"{numA} в степени {numB} равен: {result}");
