@@ -1,4 +1,5 @@
-﻿Console.Clear();
+﻿// Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+Console.Clear();
 int[] arr1 = new int[8];
 void FillArray(int[] array)
 {
