@@ -32,7 +32,7 @@ bool ArraySearch(int[] array, int search1)
     }
     return exist;
 }
-int[] arr = CreateArrayRndInt(4, -10, 10);
+int[] arr = CreateArrayRndInt(5, -10, 10);
 PrintArray(arr);
 Console.WriteLine();
 Console.WriteLine("Type the number you want to find: ");
