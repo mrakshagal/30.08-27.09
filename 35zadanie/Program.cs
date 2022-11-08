@@ -1,4 +1,5 @@
 ﻿//Одномерный массив из 123 чисел. Количество элементов массива, значение которых находится в диапазоне от 10 до 99
+Console.Clear();
 int[] CreateArrayRndInt(int size, int min, int max)
 {
     int[] array = new int[size];
