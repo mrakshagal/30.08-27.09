@@ -1,39 +1,36 @@
-﻿Console.Clear();
-Console.WriteLine("Нахождение суммы элементов, стоящих на нечетных позициях");
-Console.WriteLine("--------------------------------------------------------");
+﻿// Одномерный массив, заполненный случайными числами. Найти сумму элементов, стоящих на нечетных позициях
 
-int[] CreateArrayRndInt(int size, int min, int max)
+Console.Clear();
+int[] CreateArrayRndInt (int size, int min, int max)
 {
-    int[] array = new int[size];
+    int[] array= new int[size];
     Random rnd = new Random();
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i< size; i++)
     {
-        array[i] = rnd.Next(min, max + 1);
+        array[i] = rnd.Next(min, max+1);
     }
-    return array;
+return array;
 }
-void PrintArray(int[] array)
+void PrintArray (int[] array)
 {
     Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i <array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
-        else Console.Write($"{array[i]}");
+    if (i< array.Length-1) Console.Write($"{array[i]}, ");
+    else Console.Write($"{array[i]}");
     }
     Console.Write("]");
 }
-int SumOddPositions(int[] array)
+int Count (int[] array)
 {
-    int sum = 0;
-    for (int i = 1; i < array.Length; i = i + 2)
+    int count = default;
+    for (int i = 0; i<array.Length; i ++)
     {
-        sum = sum + array[i];
+        if (i%2==1) count= count+ array[i];
     }
-    return sum;
+    return count;
 }
-int[] arr = CreateArrayRndInt(10, -10, 10);
+int[] arr = CreateArrayRndInt (6, 0, 10);
 PrintArray(arr);
-Console.WriteLine();
-Console.WriteLine("--------------------------------------------------------");
-Console.WriteLine($"Cумма элементов, стоящих на нечетных позициях: {SumOddPositions(arr)}");
-Console.WriteLine();
+int result= Count(arr);
+Console.Write($"The summary of odd numbers is {result}");
