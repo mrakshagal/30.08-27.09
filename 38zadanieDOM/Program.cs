@@ -1,42 +1,51 @@
-﻿Console.Clear();
-Console.WriteLine("Разница между минимальным и максимальным элементом массива");
-Console.WriteLine("----------------------------------------------------------");
+﻿// Задать элемент вещественных чисел. Найти разницу между максимальным и минимальным элементом массива
 
-double[] CreateArrayRndDouble(int size)
+Console.Clear();
+double[] CreateArrayRndDouble (int size)
 {
     double[] array = new double[size];
-    Random rnd = new Random();
-    for (int i = 0; i < size; i++)
+    Random rnd = new Random ();
+    for (int i = 0; i<size; i++)
     {
-        array[i] = rnd.NextDouble() + rnd.Next(-100, 100);
+        array[i]= rnd.NextDouble()+ rnd.Next(-10,10);
     }
     return array;
 }
-void PrintArray(double[] array)
+void PrintArray (double[] array)
 {
     Console.Write("[");
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i< array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{Math.Round(array[i], 2)} ; ");
-        else Console.Write($"{Math.Round(array[i], 2)}");
+        if (i<array.Length-1) Console.Write($"{array[i]}, ");
+        else Console.Write($"{array[i]}");
     }
     Console.Write("]");
 }
-void DiffMinMax(double[] array)
+double FindMax (double[] array)
+{
+    double max= array[0];
+    for (int i = 0; i<array.Length; i++)
+    {
+        if (array[i]>=max) max= array[i];
+    }
+    return max;
+}
+double FindMin (double[] array)
 {
     double min = array[0];
-    double max = array[0];
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] >= max) max = array[i];
-        if (array[i] <= min) min = array[i];
-    }
-    Console.WriteLine($"Max -> {Math.Round(max, 2)} ");
-    Console.WriteLine($"Min -> {Math.Round(min, 2)}");
-    Console.WriteLine($"Разница -> {Math.Round(max - min, 2)}");
+for(int i =0; i<array.Length; i++)
+{
+    if (array[i]<=min) min= array[i];
 }
-double[] arr = CreateArrayRndDouble(12);
+return min;
+}
+double[] arr = CreateArrayRndDouble(7);
 PrintArray(arr);
-Console.WriteLine();
-Console.WriteLine("----------------------------------------------------------");
-DiffMinMax(arr);
+FindMax(arr);
+FindMin(arr);
+double result = FindMax(arr)- FindMin(arr);
+Console.WriteLine("------------------------------------");
+Console.WriteLine($"{FindMax(arr)} and {FindMin(arr)}");
+Console.WriteLine($"The answer is {result}");
+
+
