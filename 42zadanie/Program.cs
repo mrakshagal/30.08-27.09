@@ -1,8 +1,12 @@
 ﻿// Desyatichnoe chislo w dwoichnoe
 Console.Clear();
-Console.WriteLine("Type the number: ");
-int a = Convert.ToInt32(Console.ReadLine());
-
+int num = default;
+Console.Write("Type the number: ");
+// Ниже мы проверяем число на подходяшее. Знак восклицательный обозначает (не равно). Если введенное число является подходящим, то наш нам заменяется на число, введенное юзером
+while (!int.TryParse(Console.ReadLine(), out num)) 
+{
+    Console.Write("Error. Type integer number:");
+}
 int ConvertNumber(int num)
 {
     int result = default;
@@ -15,4 +19,4 @@ int ConvertNumber(int num)
     }
     return result; 
 }
-Console.Write(ConvertNumber(a));
+Console.Write(ConvertNumber(num));
