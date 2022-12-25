@@ -1,7 +1,6 @@
 ﻿//Massiv, Oba indeksa chetnye i vozvesti w kwadrat
 
 Console.Clear();
-Console.Clear();
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];
