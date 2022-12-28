@@ -1,4 +1,7 @@
-﻿int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+﻿// array2d. Po ubywaniu elementy kazhdoi stroki 
+
+Console.Clear();
+int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns];
     Random rnd = new Random();
@@ -7,28 +10,25 @@
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             matrix[i, j] = rnd.Next(min, max + 1);
+
         }
     }
     return matrix;
 }
-
-void PrintMatrix(int[,] matrix)
+void PrintMartix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        Console.Write("|");
+        Console.Write("[");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1)
-                Console.Write($"{matrix[i, j],3}| ");
-            else
-                Console.Write($"{matrix[i, j],3}");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],5} ");
+            else Console.Write($"{matrix[i, j],5}");
         }
-        Console.WriteLine("|");
+        Console.WriteLine("]");
     }
 }
-
-void SortDescOrderArrayRows(int[,] matrix)
+void SortElements(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -46,19 +46,9 @@ void SortDescOrderArrayRows(int[,] matrix)
         }
     }
 }
-Console.Clear();
-Random rand = new Random();
-int randRows = rand.Next(5, 5),
-    randColumns = rand.Next(5, 5);
-Console.ForegroundColor=ConsoleColor.Yellow;
-Console.WriteLine("Исходный массив");
-Console.WriteLine("*******************************");
-int[,] array2D = CreateMatrixRndInt(randRows, randColumns, 1, 99);
-PrintMatrix(array2D);
-Console.ForegroundColor=ConsoleColor.Red;
+int[,] array2d =  CreateMatrixRndInt(5,5,1, 10);
+PrintMartix(array2d);
+SortElements(array2d);
 Console.WriteLine();
-Console.WriteLine("Отсортированный массив");
-Console.WriteLine("*******************************");
-SortDescOrderArrayRows(array2D);
-PrintMatrix(array2D);
 Console.WriteLine();
+PrintMartix(array2d);
